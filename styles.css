@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fff5f8;
+    color: #4a3b3f;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #f8c8dc 0%, #fae1ec 100%);
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 2px solid #f4a7c1;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 4px rgba(227, 143, 174, 0.3);
+}
+
+header p {
+    color: #6b4c57;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+nav {
+    background-color: #f4a7c1;
+    padding: 16px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(244, 167, 193, 0.2);
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 25px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #4a3b3f;
+    text-shadow: 0 0 1px rgba(255,255,255,0.5);
+}
+
+.contenedor-principal {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.tarjeta-estudio {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(244, 167, 193, 0.12); 
+    border: 1px solid #ffeef3;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-estudio h2 {
+    color: #e38fae;
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border-bottom: 2px dashed #fbe5ee;
+    padding-bottom: 12px;
+}
+
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.bloque-servicio {
+    background-color: #fffdfd;
+    border: 1px solid #fceef3;
+    padding: 24px;
+    border-radius: 14px;
+    flex: 1 1 calc(50% - 13px);
+    min-width: 260px;
+    box-shadow: 0 4px 10px rgba(244, 167, 193, 0.03);
+    transition: all 0.3s ease;
+}
+
+.bloque-servicio:hover {
+    border-color: #f4a7c1;
+    transform: translateY(-2px);
+}
+
+.bloque-servicio h3 {
+    color: #5c3843;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.subtitulo-formulario {
+    text-align: center;
+    color: #8c7379;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.grupo-entrada {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-entrada label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #5c4a4f;
+    letter-spacing: 0.3px;
+}
+
+.grupo-entrada input,
+.grupo-entrada textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #f8c8dc;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background-color: #fffdfd;
+    font-family: inherit;
+    color: #4a3b3f;
+    transition: all 0.3s ease;
+}
+
+.grupo-entrada input:focus,
+.grupo-entrada textarea:focus {
+    outline: none;
+    border-color: #f4a7c1;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(244, 167, 193, 0.15);
+}
+
+button {
+    background: linear-gradient(135deg, #f4a7c1 0%, #e38fae 100%);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(227, 143, 174, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 7px 20px rgba(227, 143, 174, 0.35);
+    transform: translateY(-1px);
+}
+
+.mensaje-alerta {
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.error {
+    background-color: #fff2f5;
+    color: #b92c4b;
+    border: 1px solid #fcdbe3;
+    border-left: 5px solid #f4a7c1;
+}
+
+.exito {
+    background-color: #f3fdf6;
+    color: #1b6335;
+    border: 1px solid #def4e4;
+    border-left: 5px solid #2ecc71;
+}
+
+.oculto {
+    display: none !important;
+}
+
+footer {
+    text-align: center;
+    background-color: #f8c8dc;
+    padding: 25px;
+    color: #5c424c;
+    font-size: 0.85rem;
+    margin-top: 50px;
+    border-top: 1px solid #f4a7c1;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 12px 0;
+    }
+    
+    .contenedor-principal {
+        margin: 25px auto;
+        padding: 0 15px;
+        gap: 30px;
+    }
+    
+    .tarjeta-estudio {
+        padding: 25px;
+    }
+}
