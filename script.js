@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedorMensaje.classList.remove('error', 'exito');
 
         if (nombre === "" || contacto === "" || fecha === "" || personasInput === "") {
-            mostrarAlerta('Por favor, complete todos los campos obligatorios.', 'error');
+            mostrarAlerta('<strong>Campos incompletos:</strong> Por favor, llene todos los espacios requeridos marcados con (*).', 'error');
             return;
         }
 
         if (personas <= 0 || isNaN(personas)) {
-            mostrarAlerta('La cantidad de personas debe ser mayor a cero.', 'error');
+            mostrarAlerta('<strong>Cantidad incorrecta:</strong> El número de asistentes para la reservación debe ser mayor a cero.', 'error');
             return;
         }
 
@@ -32,26 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
         fechaActual.setHours(0, 0, 0, 0);
 
         if (fechaSeleccionada < fechaActual) {
-            mostrarAlerta('La fecha seleccionada no puede ser anterior al día de hoy.', 'error');
+            mostrarAlerta('<strong>Fecha inválida:</strong> No es posible programar citas para días del pasado. Seleccione hoy o una fecha futura.', 'error');
             return;
         }
 
         const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const regexTelefono = /^[0-9]{8}$/;
+        const regexTelefono = /^[0-9]{8,}$/;
 
         if (!regexCorreo.test(contacto) && !regexTelefono.test(contacto)) {
-            mostrarAlerta('Ingrese un correo válido o un teléfono de 8 dígitos.', 'error');
+            mostrarAlerta('<strong>Contacto inválido:</strong> Ingrese un correo electrónico real o un número telefónico válido de mínimo 8 dígitos.', 'error');
             return;
         }
 
         const resumenExito = `
             <strong>¡Cita Solicitada con Éxito!</strong><br><br>
-            <strong>Detalles de la reservación:</strong><br>
+            <strong>Resumen de tu espacio en el Studio:</strong><br>
             • Cliente: ${nombre}<br>
-            • Contacto: ${contacto}<br>
-            • Fecha: ${fecha}<br>
-            • Personas: ${personas}<br>
-            • Notas: ${comentarios ? comentarios : 'Ninguna'}
+            • Medio de contacto: ${contacto}<br>
+            • Fecha agendada: ${fecha}<br>
+            • Cantidad de personas: ${personas}<br>
+            • Detalles o notas: ${comentarios ? comentarios : 'Ninguno especificado'}
         `;
 
         mostrarAlerta(resumenExito, 'exito');
